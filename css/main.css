@@ -1,3 +1,7 @@
 body {
   text-align: center;
 }
+
+#pause {
+  display: none;
+}
