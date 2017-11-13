@@ -2,7 +2,10 @@ let timeDisplay = document.getElementById("time-display");
 let startButton = document.getElementById("start");
 let pauseButton = document.getElementById("pause");
 let resetButton = document.getElementById("reset");
-let seconds = 1500;
+let workTime = 8;
+let breakTime = 2;
+let status = "work";
+let seconds = workTime;
 let countDown = null;
 
 startButton.addEventListener("click", function() {
@@ -31,7 +34,14 @@ function timer() {
   let time = `${m}:${s}`;
 
   if (seconds === 0) {
-    clearInterval(countDown);
+    if (status === "work") {
+      status = "break";
+      seconds = breakTime;
+    }
+    else {
+      status = "work";
+      seconds = workTime;
+    }
     beep();
   }
 
