@@ -40,7 +40,7 @@ resetButton.addEventListener("click", function () {
 });
 
 decreaseWork.addEventListener("click", function() {
-  if (workSetting.innerText !== "01:00") {
+  if (workSetting.innerText !== "01:00" && seconds > 60) {
     workTime -= 60;
     workSetting.innerText = formatTime(workTime);
     
@@ -66,7 +66,7 @@ increaseWork.addEventListener("click", function() {
 });
 
 decreaseBreak.addEventListener("click", function() {
-  if (breakSetting.innerText !== "01:00") {
+  if (breakSetting.innerText !== "01:00" && seconds > 60) {
     breakTime -= 60;
     breakSetting.innerText = formatTime(breakTime);
     
