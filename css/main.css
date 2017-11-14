@@ -1,5 +1,25 @@
 body {
   text-align: center;
+  background-color: #eee;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: #444;
+}
+
+#title {
+  color: #888;
+  background-color: #ddd;
+  margin: 0;
+  padding: 8px 0;
+}
+
+button {
+  border: none;
+  background-color: #ddd;
+  padding: 4px 16px;
+}
+button:hover {
+  background-color: #ccc;
 }
 
 #pause {

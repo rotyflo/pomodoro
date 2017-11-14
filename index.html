@@ -5,20 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pomodoro Clock</title>
+  <title id="tab">Pomodoro Clock</title>
 
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-  <p id="time-display">25:00</p>
+  <h1 id="title">Pomodoro Clock</h1>
 
-  <input type="text" id="work-length">
-  <input type="text" id="break-length">
+  <h3 id="status-display">WORK</h3>
+  <h1 id="time-display">25:00</h1>
 
   <button id="start">Start</button>
   <button id="pause">Pause</button>
   <button id="reset">Reset</button>
+
+  <br><br>
+  <p>WORK</p>
+  <button id="decrease-work">&lt;</button>
+  <span id="work-setting">25:00</span>
+  <button id="increase-work">&gt;</button>
+
+  <p>BREAK </p>
+  <button id="decrease-break">&lt;</button>
+  <span id="break-setting">05:00</span>
+  <button id="increase-break">&gt;</button>
 
   <script src="js/main.js"></script>
 </body>
