@@ -1,25 +1,27 @@
 body {
   text-align: center;
-  background-color: #eee;
+  background-color: #547aa5;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  color: #444;
+  color: #fff;
 }
 
 #title {
-  color: #888;
-  background-color: #ddd;
+  background-color: #293132;
   margin: 0;
   padding: 8px 0;
 }
 
 button {
-  border: none;
-  background-color: #ddd;
+  border: solid 1px #50d8d7;
+  background-color: #50d8d7;
   padding: 4px 16px;
+  color: #293132;
+  border-radius: 16px;
 }
 button:hover {
-  background-color: #ccc;
+  background-color: #293132;
+  color: #fff;
 }
 
 #pause {
