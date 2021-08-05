@@ -7,29 +7,40 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title id="tab">Pomodoro Clock</title>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/holiday.css@0.9.8" />
+  <link rel="stylesheet" href="https://unpkg.com/pyloncss@latest/css/pylon.css" />
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-  <h1 id="title">Pomodoro Clock</h1>
+  <header>
+    <h1>pomodoro</h1>
+  </header>
 
-  <h3 id="status-display">WORK</h3>
-  <h1 id="time-display">25:00</h1>
+  <main>
+    <div>
+      <h3 id="status-display">stopped</h3>
+      <h1 id="time-display">00:00</h1>
 
-  <button id="start">Start</button>
-  <button id="pause">Pause</button>
-  <button id="reset">Reset</button>
+      <button id="start">start</button>
+      <button id="pause" hidden>pause</button>
+      <button id="reset">reset</button>
+    </div>
 
-  <br><br>
-  <p>WORK</p>
-  <button id="decrease-work">&lt;</button>
-  <span id="work-setting">25:00</span>
-  <button id="increase-work">&gt;</button>
+    <br><br>
 
-  <p>BREAK </p>
-  <button id="decrease-break">&lt;</button>
-  <span id="break-setting">05:00</span>
-  <button id="increase-break">&gt;</button>
+    <fieldset>
+      <legend>
+        <b>settings</b>
+      </legend>
+
+      <p>work</p>
+      <input type="number" id="work-setting" value="25" min="1" max="120">
+
+      <p>break</p>
+      <input type="number" id="break-setting" value="5" min="1" max="60">
+    </fieldset>
+  </main>
 
   <script src="js/main.js"></script>
 </body>
