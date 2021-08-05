@@ -4,110 +4,53 @@ let timeDisplay = document.getElementById("time-display");
 let startButton = document.getElementById("start");
 let pauseButton = document.getElementById("pause");
 let resetButton = document.getElementById("reset");
-let decreaseWork = document.getElementById("decrease-work");
-let increaseWork = document.getElementById("increase-work");
-let decreaseBreak = document.getElementById("decrease-break");
-let increaseBreak = document.getElementById("increase-break");
-let workSetting = document.getElementById("work-setting");
-let breakSetting = document.getElementById("break-setting");
-let workTime = 1500;
-let breakTime = 300;
 let status = "work";
-let seconds = workTime;
+let seconds = null;
 let countDown = null;
 
 startButton.addEventListener("click", function () {
   countDown = setInterval(timer, 1000);
   startButton.style.display = "none";
   pauseButton.style.display = "inline";
+  statusDisplay.innerText = (status === "work") ? "working" : "resting";
 });
 
 pauseButton.addEventListener("click", function () {
   clearInterval(countDown);
   pauseButton.style.display = "none";
   startButton.style.display = "inline";
+  statusDisplay.innerText = "paused";
 });
 
 resetButton.addEventListener("click", function () {
   clearInterval(countDown);
-  seconds = workTime;
+  seconds = null;
   status = "work";
-  tab.innerText = `[W] ${formatTime(seconds)}`;
-  statusDisplay.innerText = "WORK";
-  timeDisplay.innerText = formatTime(workTime);
+  tab.innerText = `(w) ${formatTime(seconds)}`;
+  statusDisplay.innerText = "stopped";
+  timeDisplay.innerText = "00:00";
   pauseButton.style.display = "none";
   startButton.style.display = "inline";
 });
 
-decreaseWork.addEventListener("click", function() {
-  if (workSetting.innerText !== "01:00" && seconds > 60) {
-    workTime -= 60;
-    workSetting.innerText = formatTime(workTime);
-    
-    if (status === "work") {
-      seconds -= 60;
-      tab.innerText = `[W] ${formatTime(seconds)}`;
-      timeDisplay.innerText = formatTime(seconds); 
-    }
-  }
-});
-
-increaseWork.addEventListener("click", function() {
-  if (workSetting.innerText !== "99:00") {
-    workTime += 60;
-    workSetting.innerText = formatTime(workTime);
-    
-    if (status === "work") {
-      seconds += 60;
-      tab.innerText = `[W] ${formatTime(seconds)}`;
-      timeDisplay.innerText = formatTime(seconds);
-    }
-  }
-});
-
-decreaseBreak.addEventListener("click", function() {
-  if (breakSetting.innerText !== "01:00" && seconds > 60) {
-    breakTime -= 60;
-    breakSetting.innerText = formatTime(breakTime);
-    
-    if (status === "break") {
-      seconds -= 60;
-      tab.innerText = `[B] ${formatTime(seconds)}`;
-      timeDisplay.innerText = formatTime(seconds);
-    }
-  }
-});
-
-increaseBreak.addEventListener("click", function() {
-  if (breakSetting.innerText !== "99:00") {
-    breakTime += 60;
-    breakSetting.innerText = formatTime(breakTime);
-  
-    if (status === "break") {
-      seconds += 60;
-      tab.innerText = `[B] ${formatTime(seconds)}`;
-      timeDisplay.innerText = formatTime(seconds);
-    }
-  }
-});
-
 function timer() {
+  if (seconds === null) seconds = getWorkTime();
   if (seconds === 0) {
     if (status === "work") {
       status = "break";
-      statusDisplay.innerText = "BREAK";
-      seconds = breakTime;
+      statusDisplay.innerText = "resting";
+      seconds = getBreakTime();
     }
     else {
       status = "work";
-      statusDisplay.innerText = "WORK";
-      seconds = workTime;
+      statusDisplay.innerText = "working";
+      seconds = getWorkTime();
     }
 
     beep();
   }
 
-  tab.innerText = status === "work" ? `[W] ${formatTime(seconds)}` : `[B] ${formatTime(seconds)}`;
+  tab.innerText = status === "work" ? `(w) ${formatTime(seconds)}` : `(b) ${formatTime(seconds)}`;
   timeDisplay.innerText = formatTime(seconds);
   seconds--;
 }
@@ -127,3 +70,10 @@ function beep() {
   o.stop(1);
 }
 
+function getWorkTime() {
+  return document.getElementById("work-setting").value * 60;
+}
+
+function getBreakTime() {
+  return document.getElementById("break-setting").value * 60;
+}
