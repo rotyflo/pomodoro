@@ -1,12 +1,12 @@
-let tab = document.getElementById("tab");
-let statusDisplay = document.getElementById("status-display");
-let timeDisplay = document.getElementById("time-display");
-let startButton = document.getElementById("start");
-let pauseButton = document.getElementById("pause");
-let resetButton = document.getElementById("reset");
-let status = "work";
-let seconds = null;
-let countDown = null;
+let tab = document.getElementById("tab"),
+    statusDisplay = document.getElementById("status-display"),
+    timeDisplay = document.getElementById("time-display"),
+    startButton = document.getElementById("start"),
+    pauseButton = document.getElementById("pause"),
+    resetButton = document.getElementById("reset"),
+    status = "work",
+    seconds = null,
+    countDown = null;
 
 startButton.addEventListener("click", function () {
   countDown = setInterval(timer, 1000);
@@ -71,9 +71,15 @@ function beep() {
 }
 
 function getWorkTime() {
-  return document.getElementById("work-setting").value * 60;
+  return document.getElementById("work-slider").value * 60;
 }
 
 function getBreakTime() {
-  return document.getElementById("break-setting").value * 60;
+  return document.getElementById("break-slider").value * 60;
 }
+
+["work", "break"].forEach(function(name) {
+  document.getElementById(`${name}-slider`).oninput = function() {
+    document.getElementById(`${name}-value`).innerText = this.value;
+  };
+});
