@@ -67,7 +67,7 @@ function beep() {
   o.type = "sine";
   o.connect(context.destination);
   o.start();
-  o.stop(1);
+  o.stop(3);
 }
 
 function getWorkTime() {
