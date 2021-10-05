@@ -7,41 +7,35 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title id="tab">pomodoro</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/holiday.css@0.9.8" />
-  <link rel="stylesheet" href="https://unpkg.com/pyloncss@latest/css/pylon.css" />
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="./css/main.css">
 </head>
 
-<body>
+<body class="container">
   <header>
     <h1>pomodoro</h1>
   </header>
 
   <main>
-    <div>
+    <section>
+      <h2 id="time-display">00:00</h2>
       <h3 id="status-display">stopped</h3>
-      <h1 id="time-display">00:00</h1>
 
-      <button id="start">start</button>
-      <button id="pause" hidden>pause</button>
-      <button id="reset">reset</button>
-    </div>
+      <button id="start" class="btn btn-primary">start</button>
+      <button id="pause" class="btn btn-primary btn-ghost">pause</button>
+      <button id="reset" class="btn btn-error">reset</button>
+    </section>
+
 
     <br><br>
+    <section>
+      <h4>settings</h4>
 
-    <fieldset>
-      <legend>
-        <b>settings</b>
-      </legend>
-
-      <p>work</p>
+      <p>work: <span id="work-value">25</span></p>
       <input type="range" id="work-slider" value="25" min="1" max="60">
-      <span id="work-value">25</span>
-
-      <p>break</p>
+      <br><br>
+      <p>break: <span id="break-value">5</span></p>
       <input type="range" id="break-slider" value="5" min="1" max="30">
-      <span id="break-value">5</span>
-    </fieldset>
+    </section>
   </main>
 
   <script src="js/main.js"></script>

@@ -47,7 +47,6 @@ function timer() {
       seconds = getWorkTime();
     }
 
-    beep();
   }
 
   tab.innerText = status === "work" ? `(w) ${formatTime(seconds)}` : `(b) ${formatTime(seconds)}`;
@@ -59,15 +58,6 @@ function formatTime(seconds) {
   let m = Math.floor(seconds / 60) < 10 ? "0" + Math.floor(seconds / 60) : Math.floor(seconds / 60);
   let s = seconds % 60 < 10 ? "0" + seconds % 60 : seconds % 60;
   return `${m}:${s}`;
-}
-
-function beep() {
-  let context = new AudioContext();
-  let o = context.createOscillator();
-  o.type = "sine";
-  o.connect(context.destination);
-  o.start();
-  o.stop(3);
 }
 
 function getWorkTime() {
@@ -83,3 +73,4 @@ function getBreakTime() {
     document.getElementById(`${name}-value`).innerText = this.value;
   };
 });
+

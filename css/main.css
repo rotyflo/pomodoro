@@ -1,8 +1,7 @@
-main {
-    text-align: center;
-}
+/* @import "https://raw.githubusercontent.com/rotyflo/rotyflo.github.io/master/css/theme.css"; */
+/* terminal.css classless theme */
+@import "https://rotyflo.github.io/css/theme.css";
 
-fieldset {
-    max-width: 360px; 
-    margin: auto;
+#pause {
+    display: none;
 }
