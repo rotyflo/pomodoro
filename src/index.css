@@ -1,0 +1,38 @@
+html {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    max-width: 500px;
+    margin: auto;
+}
+
+#pause-button {
+    display: none;
+    border-left: 1px solid black;
+}
+
+#work-value, #break-value {
+    pointer-events: none;
+}
+
+#display {
+    font-size: 1.5em;
+    padding: 20px;
+}
+
+.terminal-card {
+    text-align: center;
+    width: 99.5%;
+}
+
+.btn-group.controls > * {
+    width: 50%;
+    margin: 0;
+    border-top: 0;
+}
+
+.btn-group.settings > * {
+    width: 33.3%;
+}
