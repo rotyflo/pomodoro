@@ -5,7 +5,7 @@ Keep track of your work and break time with custom intervals
 
 ## How To Run
 ### Online
-Go to [rtflores.com/pomodoro](rotyflo.github.io/pomodoro)
+Go to [the web app](https://rotyflo.github.io/pomodoro)
 
 ### Locally
 ```
