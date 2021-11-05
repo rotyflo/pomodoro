@@ -10,6 +10,7 @@ import {
   decrementTimer
 } from '../actions';
 import { connect } from 'react-redux';
+import beepAudio from '../assets/beep.m4a';
 
 class App extends React.Component {
   startPause(isPaused, startTimer, pauseTimer) {
@@ -26,7 +27,7 @@ class App extends React.Component {
   beep() {
     setTimeout(() => {
       document.getElementById('beep').muted = true
-    }, 3000);
+    }, 5000);
     document.getElementById('beep').muted = false;
   }
 
@@ -41,7 +42,7 @@ class App extends React.Component {
             <div class="terminal-card">
               <header id="timer-label">{this.props.status}</header>
               <div id="time-left">{this.props.displayMinutes}:{this.props.displaySeconds}</div>
-              <audio id="beep" preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" loop muted />
+              <audio id="beep" src={beepAudio} loop muted/>
             </div>
             <div class="btn-group controls">
               <button id="start_stop" class="btn btn-ghost" onClick={() => this.startPause(this.props.isPaused, this.props.startTimer, this.props.pauseTimer)}>{this.props.isPaused ? 'Start' : 'Pause'}</button>
