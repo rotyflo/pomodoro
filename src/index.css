@@ -8,16 +8,11 @@ body {
     margin: auto;
 }
 
-#pause-button {
-    display: none;
-    border-left: 1px solid black;
-}
-
-#work-value, #break-value {
+#session-length, #break-length {
     pointer-events: none;
 }
 
-#display {
+#time-left {
     font-size: 1.5em;
     padding: 20px;
 }

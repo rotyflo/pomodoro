@@ -36,15 +36,10 @@ export default function appReducer(state = initializedState, action) {
 				isPaused: true
 			});
 		case RESET_TIMER:
-			return Object.assign({}, state, {
-				isWorking: true,
-				status: 'Stopped',
-				timer: state.workInterval * 60,
-				isPaused: true,
-				isInitiated: false
-			});
+			return Object.assign({}, state, initializedState);
+
 		case INCREMENT_WORK_INTERVAL:
-			if (state.workInterval > 98) return state;
+			if (state.workInterval > 59) return state;
 
 			updatedTimer = state.timer;
 			updatedWorkInterval = state.workInterval + 1;
@@ -54,7 +49,7 @@ export default function appReducer(state = initializedState, action) {
 				timer: updatedTimer
 			});
 		case DECREMENT_WORK_INTERVAL:
-			if (state.workInterval < 11) return state;
+			if (state.workInterval < 2) return state;
 
 			updatedTimer = state.timer;
 			updatedWorkInterval = state.workInterval - 1;
@@ -64,7 +59,7 @@ export default function appReducer(state = initializedState, action) {
 				timer: updatedTimer
 			});
 		case INCREMENT_BREAK_INTERVAL:
-			if (state.breakInterval > 98) return state;
+			if (state.breakInterval > 59) return state;
 			return Object.assign({}, state, {
 				breakInterval: state.breakInterval + 1
 			});
