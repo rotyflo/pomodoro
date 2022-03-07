@@ -1,24 +1,21 @@
 {
   "files": {
-    "main.css": "/pomodoro/static/css/main.3b3c639b.chunk.css",
-    "main.js": "/pomodoro/static/js/main.eba24f3a.chunk.js",
-    "main.js.map": "/pomodoro/static/js/main.eba24f3a.chunk.js.map",
+    "main.css": "/pomodoro/static/css/main.6486dfc6.chunk.css",
+    "main.js": "/pomodoro/static/js/main.e3e1e94f.chunk.js",
+    "main.js.map": "/pomodoro/static/js/main.e3e1e94f.chunk.js.map",
     "runtime-main.js": "/pomodoro/static/js/runtime-main.4545d878.js",
     "runtime-main.js.map": "/pomodoro/static/js/runtime-main.4545d878.js.map",
-    "static/css/2.d5b13ec2.chunk.css": "/pomodoro/static/css/2.d5b13ec2.chunk.css",
-    "static/js/2.7886e69a.chunk.js": "/pomodoro/static/js/2.7886e69a.chunk.js",
-    "static/js/2.7886e69a.chunk.js.map": "/pomodoro/static/js/2.7886e69a.chunk.js.map",
+    "static/js/2.603b30bb.chunk.js": "/pomodoro/static/js/2.603b30bb.chunk.js",
+    "static/js/2.603b30bb.chunk.js.map": "/pomodoro/static/js/2.603b30bb.chunk.js.map",
     "index.html": "/pomodoro/index.html",
-    "static/css/2.d5b13ec2.chunk.css.map": "/pomodoro/static/css/2.d5b13ec2.chunk.css.map",
-    "static/css/main.3b3c639b.chunk.css.map": "/pomodoro/static/css/main.3b3c639b.chunk.css.map",
-    "static/js/2.7886e69a.chunk.js.LICENSE.txt": "/pomodoro/static/js/2.7886e69a.chunk.js.LICENSE.txt",
+    "static/css/main.6486dfc6.chunk.css.map": "/pomodoro/static/css/main.6486dfc6.chunk.css.map",
+    "static/js/2.603b30bb.chunk.js.LICENSE.txt": "/pomodoro/static/js/2.603b30bb.chunk.js.LICENSE.txt",
     "static/media/beep.430d480c.m4a": "/pomodoro/static/media/beep.430d480c.m4a"
   },
   "entrypoints": [
     "static/js/runtime-main.4545d878.js",
-    "static/css/2.d5b13ec2.chunk.css",
-    "static/js/2.7886e69a.chunk.js",
-    "static/css/main.3b3c639b.chunk.css",
-    "static/js/main.eba24f3a.chunk.js"
+    "static/js/2.603b30bb.chunk.js",
+    "static/css/main.6486dfc6.chunk.css",
+    "static/js/main.e3e1e94f.chunk.js"
   ]
 }
